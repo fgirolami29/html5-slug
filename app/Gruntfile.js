@@ -28,6 +28,7 @@ module.exports = function(grunt) {
     connect: {
       game: {
         options: {
+          hostname: '0.0.0.0',
           port: 9092,
           base: ['.', 'dist']
         }

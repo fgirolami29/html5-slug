@@ -26,7 +26,7 @@
 
     function createLedges() {
         LEDGES.forEach(function(l){
-            var ledge = platforms.create(l.x, l.y, 'ground');
+            var ledge = platforms.create(l.x, l.y - 10, 'ground');
             ledge.body.immovable = true;
             ledge.width = l.width;
         });
@@ -43,7 +43,7 @@
         platforms = game.add.group();
         platforms.enableBody = true;
 
-        ground = platforms.create(0, game.world.height - 90, 'ground');
+        ground = platforms.create(0, config.height - 80, 'ground');
         ground.scale.setTo(4, 2);
         ground.body.immovable = true;
 

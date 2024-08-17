@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  webmetalslug:
+    build: .
+    volumes:
+      - ./app:/app
+    ports:
+      - "8383:9092"
+    restart: unless-stopped  
+    environment:
+      VIRTUAL_PORT: 9092
+      VIRTUAL_HOST: porting03-demo.bpartnerslab.it
+      LETSENCRYPT_HOST: porting03-demo.bpartnerslab.it
+      LETSENCRYPT_EMAIL: f.girolami@bpartnerslab.it
+    networks:
+      - nbridge
+networks:
+  nbridge:
+    external:
+      name: nbridge
